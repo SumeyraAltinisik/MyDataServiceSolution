@@ -10,8 +10,4 @@ public partial class Gubudik
     public string Title { get; set; } = null!;
 
     public long ArtistId { get; set; }
-
-    public virtual Artist Artist { get; set; } = null!;
-
-    public virtual ICollection<Track> Tracks { get; } = new List<Track>();
 }
