@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
             List<Gubudik> Listem = new List<Gubudik>();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("http://localhost:5205/WeatherForecast"))
+                using (var response = await httpClient.GetAsync("http://localhost:5223/store/Albums"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     Listem = JsonConvert.DeserializeObject<List<Gubudik>>(apiResponse);

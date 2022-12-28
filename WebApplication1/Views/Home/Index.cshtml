@@ -1,4 +1,8 @@
-﻿@{
+﻿@using MyDataService.Models
+@model List<Gubudik>
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +10,24 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<table>
+    <thead>
+        <tr>
+            <td>Album Id</td>
+            <td>Title</td>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (Gubudik e in Model)
+        {
+            <tr>
+                <td>@e.AlbumId</td>
+                <td>@e.Title</td>
+                <td>@e.ArtistId</td>
+                <td>@e.Artist</td>
+                <td>@e.Tracks</td>
+            </tr>
+        }
+    </tbody>
+</table>
