@@ -11,7 +11,7 @@ namespace WinFormsApp1
         }
         public async Task Index()
         {
-            List<Gubudik> Listem = new List<Gubudik>();
+            List<Gubudik> Listem;
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync("http://localhost:5223/store"))
@@ -28,6 +28,24 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             Index();
+        }
+
+        private void genel_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            var title = btn.Text;
+
+            Index();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
